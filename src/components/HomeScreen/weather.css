@@ -1,0 +1,23 @@
+.weather-icon{
+    width: 170px;
+    margin-top: 50px;
+}
+
+.card{
+    width: 40%;
+    background-color: red;
+    margin-left: 31.5%;
+    
+}
+
+.details{
+    margin-left: 80%;
+    margin-top: 0px;
+
+}
+
+.col{
+    display:flex;
+    align-items: center;
+    text-align: left;
+}

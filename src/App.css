@@ -1,0 +1,10 @@
+/* CSS for centering the container and its contents */
+.App {
+  /* display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; */
+  /* height: 100vh; Adjust the container height as needed */
+}
+
+/* Styles for BootstrapTabs and Clock components (if needed) */

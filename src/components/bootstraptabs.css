@@ -1,0 +1,14 @@
+.tabs-container {
+    /* Adjust the positioning properties as needed */
+    position: absolute; /* You can use 'relative', 'fixed', or other values based on your layout needs */
+    top: 100px; /* Adjust the top position */
+    left: 50%; /* Adjust the horizontal position */
+    transform: translateX(-50%); /* Center horizontally */
+    width: 80%;
+    text-align: center
+  }
+
+  /* .card-heading {
+    background-color: aliceblue;
+    padding: 10px;
+  } */

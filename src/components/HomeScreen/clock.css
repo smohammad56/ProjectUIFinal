@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
+
+.clock{
+    /* width: 106.5vw;
+    height: 95vh; */
+    overflow: hidden;
+    text-align: center;
+}
+
+.clock h1{
+
+    /* width: 250px; */
+    margin: 3vh auto 0px auto;
+    /* margin-left: 69vh; */
+    font-family: 'Montserrat'
+}

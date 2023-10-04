@@ -1,0 +1,31 @@
+/* 
+body {
+  margin: 0;
+  background-color: blue;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+ */
+
+ body {
+  background-image: url('../images/bg_one.jpg');
+  background-size: cover 100%;
+  background-repeat: no-repeat;
+ }
+
+ * {
+  margin: 0 auto;
+  padding: 0px;
+ }
+
+ div {
+  margin: 0;
+  padding: 0
+ }
