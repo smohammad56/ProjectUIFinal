@@ -1,5 +1,7 @@
 import '../../styles.css';
 import Clock from './Clock';
+import Status from './Status';
+
 const HomeScreen = () => {
 	return (
 			<div className="container px-4 py-5 h-100">
@@ -58,21 +60,13 @@ const HomeScreen = () => {
 						<div className="card col-3" style={{backgroundColor: '#F5FBFF', borderRadius: '35px', marginLeft: '15px' }}>
 							<div className="card-body p-4">
 								<div className="d-flex">
-									<h6 className="flex-grow-1">Upcoming Events</h6>
-								</div>
-
-								<div className="d-flex flex-column text-center mt-3">
-									<h2 className="mb-4 light">{ new Date().toDateString() }</h2>
-									<div>
-										<img src="../images/clock.png"
-											width="50%" />
-									</div>
+									<h6 className="flex-grow-1">Window Status</h6>
 								</div>
 
 
 								<div className="d-flex align-items-left mt-3">
 									<div className="flex-grow-1">
-										<Clock />
+										<Status />
 									</div>
 								</div>
 

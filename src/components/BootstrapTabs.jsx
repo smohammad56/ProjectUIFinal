@@ -1,15 +1,20 @@
 import React, { useState } from "react";
 import './bootstraptabs.css'
 import HomeScreen from "./HomeScreen/HomeScreen";
+import Settings from "./Settings";
 
 function BootstrapTabs() {
   // State variable to keep track of the active tab
   const [activeTab, setActiveTab] = useState("homeScreen");
 
+
+
   // Function to handle tab click and update the activeTab state
   const handleTabClick = (tabName) => {
     setActiveTab(tabName);
   };
+
+
 
   // Content for each tab
   const tabContent = {
@@ -55,9 +60,11 @@ function BootstrapTabs() {
           </a>
         </li>
       </ul>
-
       {/* Render the content based on the active tab */}
       {tabContent[activeTab]}
+
+      <Settings />
+
     </div>
   );
 }
