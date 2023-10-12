@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function NumberDisplay() {
+function Arrows() {
   const [number, setNumber] = useState(0);
 
   const handleIncrement = () => {
@@ -34,6 +34,7 @@ function NumberDisplay() {
     marginTop: '30px', // Padding added to the top
   };
 
+
   return (
     <div style={containerStyle}>
       <button style={buttonStyle} onClick={handleIncrement}>↑</button>
@@ -43,4 +44,4 @@ function NumberDisplay() {
   );
 }
 
-export default NumberDisplay;
+export default Arrows;

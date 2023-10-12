@@ -1,13 +1,22 @@
 import Arrows from "./Arrows";
-import React from 'react';
-import CircularSlider from '@fseehawer/react-circular-slider';
+import React , {useState} from 'react';
 import SeasonSets from "./SeasonSets";
 import PreSetModal from "./PreSetModal";
-import './SeasonSets.css'
+import AutoTemp from "./AutoTemp";
+
 
 
 
 function WOScreen(props) {
+
+    const [seasonVal, setseasonVal] = useState('');
+    const [fall, setFall] = useState({tintOperation: '', temp: '', tintLvl: ''});
+    const [winter, setWinter] = useState({tintOperation: '', temp: '', tintLvl: ''});
+    const [spring, setSpring] = useState({tintOperation: '', temp: '', tintLvl: ''});
+    const [summer, setSummer] = useState({tintOperation: '', temp: '', tintLvl: ''});
+
+
+
     return (
 		<div className="container px-4 pb-5 h-100">
 				<div className="display-5 pb-5 row d-flex flex-row justify-content-center align-items-center"> 
@@ -20,7 +29,7 @@ function WOScreen(props) {
                                     <h6 className="flex-grow-1">Window Operation</h6>
                                 </div>
                                 <div className="d-flex flex-column text-center mt-1">
-                                  <h2 className="mb-4 light"> <Arrows/></h2>
+                                  <h2 className="mb-4 light"> <Arrows /></h2>
                                 </div>
                             </div>
                         </div>
@@ -37,20 +46,7 @@ function WOScreen(props) {
                                         <button className="btn btn-primary mx-2">On</button>
                                         <button className="btn btn-primary mx-2">Off</button>
                                     </div>
-                                    <div className="mt-3">
-                                        <CircularSlider
-                                        label="."
-                                        max={100}
-                                        min={0}
-                                        appendToValue="°"
-                                        valueFontSize="70px"
-                                        labelColor="beige"
-                                        verticalOffset="60px"
-                                        onChange={(tempValue) => {
-                                            console.log(tempValue);
-                                        }}
-                                        />
-                                    </div>
+                                    <AutoTemp seasonVal={seasonVal} fall={fall} winter={winter} spring={spring} summer={summer}/>
                                     </div>
                             </div>
                             
@@ -60,8 +56,8 @@ function WOScreen(props) {
                                 <div className="d-flex">
                                 <h6 className="flex-grow-1 pb-3">Seasonal Pre-Sets</h6>
                                 </div>
-                                <PreSetModal/>
-                                {<SeasonSets/>}
+                                <PreSetModal  seasonVal={seasonVal} setseasonVal={setseasonVal} setFall={setFall} setWinter={setWinter} setSpring={setSpring} setSummer={setSummer}/>
+                                {<SeasonSets setseasonVal={setseasonVal} />}
                             </div>
                             </div>
 

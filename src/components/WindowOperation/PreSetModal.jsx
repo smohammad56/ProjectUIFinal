@@ -1,45 +1,65 @@
-import React from 'react';
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+import { useState, useEffect } from 'react';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import Modal from 'react-bootstrap/Modal';
+import SetDrop from './SetDrop';
+import SetTintDrop from './SetTintDrop';
 
 
-function PreSetModal() {
+
+function PreSetModal(props) {
+
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+  const [tintOp, settintOp] = useState('');
+  const [temp, setTemp] = useState('');
+  const [tintLvl, settintLvl] = useState('');
+  const pass = () => { if (props.seasonVal == 'Fall')
+  {
+      props.setFall({tintOp, temp, tintLvl});
+  } else if (props.seasonVal == 'Winter')
+  {
+      props.setWinter({tintOp, temp, tintLvl});
+  }
+  else if (props.seasonVal == 'Spring')
+  {
+    props.setSpring({tintOp, temp, tintLvl});
+  } else if (props.seasonVal == 'Summer')
+  {
+    props.setSummer({tintOp, temp, tintLvl});}
+  }
+
+
   return (
-    <div>
-    <div className="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabIndex="-1">
-      <div className="modal-dialog modal-dialog-centered">
-        <div className="modal-content">
-          <div className="modal-header">
-            <h1 className="modal-title fs-5" id="exampleModalToggleLabel">Modal 1</h1>
-            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div className="modal-body">
-            Show a second modal and hide this one with the button below.
-          </div>
-          <div className="modal-footer">
-            <button className="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Open second modal</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div className="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabIndex="-1">
-      <div className="modal-dialog modal-dialog-centered">
-        <div className="modal-content">
-          <div className="modal-header">
-            <h1 className="modal-title fs-5" id="exampleModalToggleLabel2">Modal 2</h1>
-            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div className="modal-body">
-            Hide this modal and show the first with the button below.
-          </div>
-          <div className="modal-footer">
-            <button className="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Back to first</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <button className="btn btn-primary mb-4 w-100" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Input Setting</button>
-    </div>
+    <>
+      <Button variant="primary" onClick={handleShow}>
+        Change Settings
+      </Button>
+
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Set Seasonal Settings</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <SetDrop seasonVal={props.seasonVal} setseasonVal={props.setseasonVal}/>
+          <Form.Control type="text" placeholder="Set Auto-Open Temperature" onChange={(e) => setTemp(e.target.value)}/>
+          <br />
+          <Form.Control type="text" placeholder="Set Tint Percentage" onChange={(e) => settintLvl(e.target.value)}/>
+          <br />
+          <SetTintDrop settintOp={settintOp}/>
+
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={pass}>
+            Save Changes
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    </>
   );
 }
 
