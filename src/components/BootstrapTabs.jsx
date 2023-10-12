@@ -2,10 +2,16 @@ import React, { useState } from "react";
 import './bootstraptabs.css'
 import HomeScreen from "./HomeScreen/HomeScreen";
 import Settings from "./Settings";
+import TintScreen from "./TintControl/TintScreen";
+import WOScreen from "./WindowOperation/WOScreen";
+
 
 function BootstrapTabs() {
   // State variable to keep track of the active tab
   const [activeTab, setActiveTab] = useState("homeScreen");
+  const [mode, setMode] = useState("On");
+  const [weather, setWeather] = useState("Sunny");
+  const [content, setContent] = useState('Welcome, Salma!');
 
 
 
@@ -19,13 +25,13 @@ function BootstrapTabs() {
   // Content for each tab
   const tabContent = {
     windowOperation: (
-      activeTab === "windowOperation" ? <div /> : <div>Content for Window Operation Tab</div>
+      activeTab === "windowOperation" ? <WOScreen/> : <div />
     ),
     homeScreen: (
-      activeTab === "homeScreen" ? <HomeScreen /> : <div />
+      activeTab === "homeScreen" ? <HomeScreen mode={mode} weather={weather} content={content}/> : <div/>
     ),
     tintControl: (
-      activeTab === "tintControl" ? <div /> : <div>Content for Tint Control Tab</div>
+      activeTab === "tintControl" ? <TintScreen/> : <div />
     ),
   };
 
@@ -63,7 +69,7 @@ function BootstrapTabs() {
       {/* Render the content based on the active tab */}
       {tabContent[activeTab]}
 
-      <Settings />
+      <Settings mode={mode} setMode={setMode} weather={weather} setWeather={setWeather} content={content} setContent={setContent}/>
 
     </div>
   );
