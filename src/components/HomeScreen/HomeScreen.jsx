@@ -45,7 +45,7 @@ const HomeScreen = (props) => {
 
                                 <div className="d-flex align-items-left mt-3">
                                     <div className="flex-grow-1">
-                                        <Status mode={props.mode} weather={props.weather} />
+                                        <Status mode={props.mode} setMode={props.setMode} weather={props.weather} />
                                     </div>
                                 </div>
 

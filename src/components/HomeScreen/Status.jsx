@@ -30,7 +30,7 @@ useEffect(() => {
   return (
     <div className="row g-2">
     <div className="col-12">
-      <div className="rounded border p-3"><Toggle/></div>
+      <div className="rounded border p-3"><Toggle toggleMode={props.toggleMode} mode={props.mode} setMode={props.setMode}/></div>
     </div>
     <div className="col-12">
       <div className="rounded border p-3">Last Updated: {dt} </div>

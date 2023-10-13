@@ -9,13 +9,6 @@ import AutoTemp from "./AutoTemp";
 
 function WOScreen(props) {
 
-    const [seasonVal, setseasonVal] = useState('');
-    const [fall, setFall] = useState({tintOperation: '', temp: '', tintLvl: ''});
-    const [winter, setWinter] = useState({tintOperation: '', temp: '', tintLvl: ''});
-    const [spring, setSpring] = useState({tintOperation: '', temp: '', tintLvl: ''});
-    const [summer, setSummer] = useState({tintOperation: '', temp: '', tintLvl: ''});
-
-
 
     return (
 		<div className="container px-4 pb-5 h-100">
@@ -33,20 +26,19 @@ function WOScreen(props) {
                                 </div>
                             </div>
                         </div>
-                
+
                         <div className="card col-3" style={{backgroundColor: props.mode === "On" ? '#F5FBFF' : '#d0d0d0', borderRadius: '35px', marginLeft: '15px' }}>
                             <div className="card-body p-4">
                                 <div className="d-flex">
                                     <h6 className="flex-grow-1 pb-3">Set Auto-Open Temperature</h6>
                                 </div>
 
-
                                 <div className="d-flex flex-column justify-content-center align-items-center pb-3">
                                     <div className="d-flex justify-content-center mb-1">
                                         <button className="btn btn-primary mx-2">On</button>
                                         <button className="btn btn-primary mx-2">Off</button>
                                     </div>
-                                    <AutoTemp seasonVal={seasonVal} fall={fall} winter={winter} spring={spring} summer={summer}/>
+                                    <AutoTemp seasonVal={props.seasonVal} fallTemp={props.fall.temp} winterTemp={props.winter.temp} springTemp={props.spring.temp} summerTemp={props.summer.temp}/>
                                     </div>
                             </div>
                             
@@ -56,8 +48,8 @@ function WOScreen(props) {
                                 <div className="d-flex">
                                 <h6 className="flex-grow-1 pb-3">Seasonal Pre-Sets</h6>
                                 </div>
-                                <PreSetModal  seasonVal={seasonVal} setseasonVal={setseasonVal} setFall={setFall} setWinter={setWinter} setSpring={setSpring} setSummer={setSummer}/>
-                                {<SeasonSets setseasonVal={setseasonVal} />}
+                                <PreSetModal  seasonVal={props.seasonVal} setseasonVal={props.setseasonVal} setFall={props.setFall} setWinter={props.setWinter} setSpring={props.setSpring} setSummer={props.setSummer}/>
+                                {<SeasonSets setseasonVal={props.setseasonVal} />}
                             </div>
                             </div>
 

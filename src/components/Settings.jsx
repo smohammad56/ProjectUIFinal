@@ -2,14 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem, Modal, ModalHeader, ModalTitle, ModalBody, ModalFooter } from "react-bootstrap";
 
 const Settings = (props) => {
-    const [toggle, setToggle] = useState(true);
     const [weatherName, setWeatherName] = useState('Sunny');
     const [showModal, setShowModal] = useState(false);
   
-
-    const toggleMode = () => {
-        setToggle(!toggle);
-    };
 
     const toggleContentModal = () => {
         setShowModal(false);
@@ -21,13 +16,6 @@ const Settings = (props) => {
         props.setContent(props.content);
     };
 
-    useEffect(() => {
-        if (toggle) {
-            props.setMode("On");
-        } else {
-            props.setMode("Off");
-        }
-    }, [toggle]);
 
     useEffect(() => {
         setWeatherName(props.weather);
@@ -43,7 +31,7 @@ const Settings = (props) => {
 
             <div className="d-flex flex-column text-center mt-3">
             <button className="mb-2" onClick={()=>setShowModal(true)}>Change Content</button>
-            <button onClick={toggleMode}  className="mb-2">Light Mode: {props.mode}</button>
+    
             <Dropdown>
                 <DropdownToggle className="w-100">
                     Weather: { weatherName }

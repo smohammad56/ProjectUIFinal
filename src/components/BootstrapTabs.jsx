@@ -14,6 +14,12 @@ function BootstrapTabs() {
   const [content, setContent] = useState('Welcome, Salma!');
 
 
+  const [seasonVal, setseasonVal] = useState('');
+  const [fall, setFall] = useState({tintOperation: '', temp: 0, tintLvl: 0});
+  const [winter, setWinter] = useState({tintOperation: '', temp: 0, tintLvl: 0});
+  const [spring, setSpring] = useState({tintOperation: '', temp: 0 , tintLvl: 0});
+  const [summer, setSummer] = useState({tintOperation: '', temp: 0, tintLvl: 0});
+
 
   // Function to handle tab click and update the activeTab state
   const handleTabClick = (tabName) => {
@@ -25,13 +31,13 @@ function BootstrapTabs() {
   // Content for each tab
   const tabContent = {
     windowOperation: (
-      activeTab === "windowOperation" ? <WOScreen/> : <div />
+      activeTab === "windowOperation" ? <WOScreen seasonVal={seasonVal} setseasonVal={setseasonVal} fall={fall} winter={winter} spring={spring} summer={summer} setFall={setFall} setWinter={setWinter} setSpring={setSpring} setSummer={setSummer}/> : <div />
     ),
     homeScreen: (
-      activeTab === "homeScreen" ? <HomeScreen mode={mode} weather={weather} content={content}/> : <div/>
+      activeTab === "homeScreen" ? <HomeScreen mode={mode} setMode={setMode} weather={weather} content={content}/> : <div/>
     ),
     tintControl: (
-      activeTab === "tintControl" ? <TintScreen/> : <div />
+      activeTab === "tintControl" ? <TintScreen seasonVal={seasonVal} setseasonVal={setseasonVal} fall={fall} winter={winter} spring={spring} summer={summer} setFall={setFall} setWinter={setWinter}/> : <div />
     ),
   };
 

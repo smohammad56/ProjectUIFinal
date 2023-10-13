@@ -30,6 +30,7 @@ function PreSetModal(props) {
     props.setSummer({tintOp, temp, tintLvl});}
   }
 
+  console.log(tintOp, temp, tintLvl)
 
   return (
     <>

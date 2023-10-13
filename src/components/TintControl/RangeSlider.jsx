@@ -1,11 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-function RangeSlider() {
-  const [sliderValue, setSliderValue] = useState(50); // Initial slider value
+function RangeSlider(props) {
+  const [sliderValue, setSliderValue] = useState(0); // Initial slider value
 
   const handleSliderChange = (event) => {
     setSliderValue(event.target.value);
   };
+
+  useEffect(() => {
+    if (props.seasonVal == 'Fall') {
+        setSliderValue(props.falltintLvl)
+    } else if (props.seasonVal == 'Winter')
+    {
+      setSliderValue(props.wintertintLvl)
+    }
+    else if (props.seasonVal == 'Spring')
+    {
+      setSliderValue(props.springtintLvl)
+    }
+    else if (props.seasonVal == 'Summer') {
+      setSliderValue(props.summertintLvl)
+    }
+}, [props]);
 
   return (
     <div>

@@ -3,6 +3,7 @@
     display: inline-flex;
     background-color: #007bff; /* Blue color */
     border-radius: 30px;
+    width: 100px;
     cursor: pointer;
     transition: background-color 0.3s;
     padding: 5px;
@@ -22,7 +23,7 @@
   }
   
   .toggle-switch.on .slider {
-    transform: translateX(30px);
+    transform: translateX(60px);
   }
   
   .toggle-switch.off .slider {
