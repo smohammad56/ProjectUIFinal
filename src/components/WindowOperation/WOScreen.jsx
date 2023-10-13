@@ -22,7 +22,7 @@ function WOScreen(props) {
                                     <h6 className="flex-grow-1">Window Operation</h6>
                                 </div>
                                 <div className="d-flex flex-column text-center mt-1">
-                                  <h2 className="mb-4 light"> <Arrows /></h2>
+                                  <h2 className="mb-4 light"> <Arrows mode={props.mode} setMode={props.setMode} /></h2>
                                 </div>
                             </div>
                         </div>
@@ -38,7 +38,7 @@ function WOScreen(props) {
                                         <button className="btn btn-primary mx-2">On</button>
                                         <button className="btn btn-primary mx-2">Off</button>
                                     </div>
-                                    <AutoTemp seasonVal={props.seasonVal} fallTemp={props.fall.temp} winterTemp={props.winter.temp} springTemp={props.spring.temp} summerTemp={props.summer.temp}/>
+                                    <AutoTemp mode={props.mode} setMode={props.setMode} seasonVal={props.seasonVal} fallTemp={props.fall.temp} winterTemp={props.winter.temp} springTemp={props.spring.temp} summerTemp={props.summer.temp}/>
                                     </div>
                             </div>
                             
@@ -48,7 +48,7 @@ function WOScreen(props) {
                                 <div className="d-flex">
                                 <h6 className="flex-grow-1 pb-3">Seasonal Pre-Sets</h6>
                                 </div>
-                                <PreSetModal  seasonVal={props.seasonVal} setseasonVal={props.setseasonVal} setFall={props.setFall} setWinter={props.setWinter} setSpring={props.setSpring} setSummer={props.setSummer}/>
+                                <PreSetModal  mode={props.mode} setMode={props.setMode} seasonVal={props.seasonVal} setseasonVal={props.setseasonVal} setFall={props.setFall} setWinter={props.setWinter} setSpring={props.setSpring} setSummer={props.setSummer}/>
                                 {<SeasonSets setseasonVal={props.setseasonVal} />}
                             </div>
                             </div>

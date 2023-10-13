@@ -19,7 +19,7 @@ function TintScreen(props) {
 							<div className="d-flex flex-column text-center mt-3">
 							  <h2 className="mb-2 light"></h2>
 								<div>
-								<TintButtons seasonVal={props.seasonVal} falltintOperation={props.fall.tintOp} wintertintOperation={props.winter.tintOp} springtintOperation={props.spring.tintOp} summertintOperation={props.summer.tintOp}/>
+								<TintButtons mode={props.mode} setMode={props.setMode} seasonVal={props.seasonVal} falltintOperation={props.fall.tintOp} wintertintOperation={props.winter.tintOp} springtintOperation={props.spring.tintOp} summertintOperation={props.summer.tintOp}/>
 								</div>
 							</div>
 
@@ -35,7 +35,7 @@ function TintScreen(props) {
 
 							<div className="d-flex align-items-left mt-3">
 								<div className="flex-grow-1">
-								<RangeSlider seasonVal={props.seasonVal} falltintLvl={props.fall.tintLvl} wintertintLvl={props.winter.tintLvl} springtintLvl={props.spring.tintLvl} summertintLvl={props.summer.tintLvl} />
+								<RangeSlider mode={props.mode} setMode={props.setMode} seasonVal={props.seasonVal} falltintLvl={props.fall.tintLvl} wintertintLvl={props.winter.tintLvl} springtintLvl={props.spring.tintLvl} summertintLvl={props.summer.tintLvl} />
 								</div>
 							</div>
 

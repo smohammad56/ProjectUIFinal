@@ -25,7 +25,7 @@ function RangeSlider(props) {
 
   return (
     <div>
-      <input
+      <input className="tintSlider w-75"
         type="range"
         min="0"
         max="100"

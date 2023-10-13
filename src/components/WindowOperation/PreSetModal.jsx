@@ -52,11 +52,11 @@ function PreSetModal(props) {
 
         </Modal.Body>
         <Modal.Footer>
+        <Button variant="primary" onClick={pass}>
+            Save Changes
+          </Button>
           <Button variant="secondary" onClick={handleClose}>
             Close
-          </Button>
-          <Button variant="primary" onClick={pass}>
-            Save Changes
           </Button>
         </Modal.Footer>
       </Modal>

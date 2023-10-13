@@ -2,19 +2,20 @@ import React, { useEffect, useState } from "react";
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem, Modal, ModalHeader, ModalTitle, ModalBody, ModalFooter } from "react-bootstrap";
 
 const Settings = (props) => {
+
     const [weatherName, setWeatherName] = useState('Sunny');
-    const [showModal, setShowModal] = useState(false);
+    // const [showModal, setShowModal] = useState(false);
   
 
-    const toggleContentModal = () => {
-        setShowModal(false);
-        props.setContent('Welcome, User!')
-    }
+    // const toggleContentModal = () => {
+    //     setShowModal(false);
+    //     props.setContent('Welcome, User!')
+    // }
 
-    const updateContent = () => {
-        setShowModal(false)
-        props.setContent(props.content);
-    };
+    // const updateContent = () => {
+    //     setShowModal(false)
+    //     props.setContent(props.content);
+    // };
 
 
     useEffect(() => {
@@ -29,8 +30,8 @@ const Settings = (props) => {
                 <h6 className="flex-grow-1">Input Test</h6>
             </div>
 
-            <div className="d-flex flex-column text-center mt-3">
-            <button className="mb-2" onClick={()=>setShowModal(true)}>Change Content</button>
+            {/* <div className="d-flex flex-column text-center mt-3">
+            <button className="mb-2" onClick={()=>setShowModal(true)}>Change Content</button> */}
     
             <Dropdown>
                 <DropdownToggle className="w-100">
@@ -45,22 +46,21 @@ const Settings = (props) => {
             </div>
         </div>
         </div>
-        <Modal show={showModal} onHide={toggleContentModal}>
+        /* <Modal show={showModal} onHide={toggleContentModal}>
             <ModalHeader closeButton><ModalTitle>Change Welcome Content</ModalTitle></ModalHeader>
             <ModalBody>
                 <p>Enter your custom welcome message: </p>
                 <input className="w-100" onChange={(e) => props.setContent(e.target.value)} />
             </ModalBody>
             <ModalFooter>
-                <button className="btn btn-secondary" onClick={toggleContentModal}>
-                    Close
-                </button>
                 <button className="btn btn-primary" onClick={updateContent}>
                     Okay
                 </button>
+                <button className="btn btn-secondary" onClick={toggleContentModal}>
+                    Close
+                </button>
             </ModalFooter>
-        </Modal>
-    </div>
+        </Modal> */
     );
 };
 
